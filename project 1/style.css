@@ -1,0 +1,227 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font */
+    background: linear-gradient(135deg, #002fff 0%, #764ba2 100%); /* Subtle gradient for depth, evoking secure systems */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents scroll on small screens */
+}
+
+.container {
+    width: 360px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.policy {
+    text-align: left;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.policy ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.policy li {
+    margin: 5px 0;
+}
+
+.policy .pass {
+    color: #22c55e;
+}
+
+.policy .fail {
+    color: #ef4444;
+}
+
+.meter {
+    width: 100%;
+    height: 10px;
+    background: #334155;
+    border-radius: 5px;
+    margin: 10px 0 15px;
+    overflow: hidden;
+}
+
+#strengthBar {
+    height: 100%;
+    width: 0%;
+    background: red;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+/* Strength colors */
+.weak {
+    color: #ef4444;
+}
+
+.moderate {
+    color: #f59e0b;
+}
+
+.strong {
+    color: #22c55e;
+}
+
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+h1 i {
+    margin-right: 10px;
+    color: #3498db; /* Blue accent for security icon */
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.input-group {
+    margin: 20px 0;
+}
+
+input, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box; /* ✅ THIS FIXES THE ALIGNMENT */
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 40px;
+}
+
+.toggle-eye {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+    color: #64748b;
+}
+
+.toggle-eye:hover {
+    color: #3498db;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Focus ring for accessibility */
+}
+
+button {
+    background: linear-gradient(45deg, #3498db, #2980b9); /* Gradient button for appeal */
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover */
+    font-weight: bold;
+}
+.secondary-btn {
+    margin-top: 10px;
+    background: linear-gradient(45deg, #22c55e, #16a34a);
+}
+
+.secondary-btn:hover {
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+}
+
+button:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+button i {
+    margin-right: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+#result {
+    margin-top: 25px;
+    animation: fadeIn 0.5s ease-in; /* Fade-in animation for results */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.score-section {
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%; /* Starts at 0, animated in JS */
+    transition: width 0.5s ease, background-color 0.5s ease; /* Smooth fill animation */
+    border-radius: 5px;
+}
+
+#score {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#strength {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.weak {
+    color: #e74c3c;
+}
+
+.moderate {
+    color: #d3b17c;
+}
+
+.strong {
+    color: #27ae60;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+}

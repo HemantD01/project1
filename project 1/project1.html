@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="policy">
+    <p>Password Policy:</p>
+    <ul>
+       <li id="rule-length" data-text="At least 8 characters">❌ At least 8 characters</li>
+<li id="rule-upper" data-text="At least one uppercase letter">❌ At least one uppercase letter</li>
+<li id="rule-lower" data-text="At least one lowercase letter">❌ At least one lowercase letter</li>
+<li id="rule-number" data-text="At least one number">❌ At least one number</li>
+<li id="rule-special" data-text="At least one special character">❌ At least one special character</li>
+<li id="rule-space" data-text="No spaces">❌ No spaces</li>
+
+    </ul>
+</div>
+
+        <div class="meter">
+    <div id="strengthBar"></div>
+</div>
+        <h1>Password Strength Analyzer</h1>
+        <p>Enter a password to check its strength. Analysis happens locally—no data is stored or sent.</p>
+        <div class="password-wrapper">
+    <input 
+        type="password" 
+        id="passwordInput" 
+        placeholder="Enter your password"
+    >
+    <span id="togglePassword" class="toggle-eye">👁️</span>
+</div>
+
+         <button id="analyzeBtn">Analyze Strength</button>
+        <button id="generateBtn" class="secondary-btn">
+    Generate Secure Password
+</button>
+
+        <div id="result" class="hidden">
+            <p>Score: <span id="score">0</span>/100</p>
+            <p>Strength: <span id="strength">Weak</span></p>
+            <p id="explanation">Your password is weak. Try adding more characters and variety.</p>
+            <p><strong>Estimated Crack Time:</strong> <span id="crackTime"></span></p>
+            <p><strong>Entropy:</strong> <span id="entropy"></span></p>
+            <p><strong>Breach Status:</strong> <span id="breachStatus"></span></p>
+        </div>
+    </div>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>
